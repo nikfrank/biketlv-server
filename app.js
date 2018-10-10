@@ -2,6 +2,8 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const Sequelize = require('sequelize');
+const cors = require('cors');
+
 
 const sequelize = new Sequelize('biketlv', 'biketlv', 'nikisgreat', {
   host: 'localhost',
@@ -40,6 +42,7 @@ const BikeLane = sequelize.define('bikelane', {
 
 app.use(logger('dev'));
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 
