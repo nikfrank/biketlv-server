@@ -1,0 +1,31 @@
+{
+  "name": "bike_tlv",
+  "version": "1.0.0",
+  "description": "server for bike_tlv",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikfrank/biketlv-server.git"
+  },
+  "keywords": [
+    "server",
+    "bike",
+    "tlv"
+  ],
+  "author": "nachum_freedman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikfrank/biketlv-server/issues"
+  },
+  "homepage": "https://github.com/nikfrank/biketlv-server#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "morgan": "^1.9.1",
+    "sequelize": "^4.39.0"
+  }
+}
