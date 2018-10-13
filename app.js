@@ -4,18 +4,24 @@ const bodyParser = require('body-parser');
 const Sequelize = require('sequelize');
 const cors = require('cors');
 
-const sequelize = new Sequelize('biketlv', 'biketlv', 'nikisgreat', {
-  host: 'localhost',
-  dialect: 'postgres',
-  operatorsAliases: false,
 
-  pool: {
-    max: 5,
-    min: 0,
-    aquire: 30000,
-    idle: 10000
-  }
-});
+
+const sequelize = !process.env.DATABASE_URL ? (
+  new Sequelize('biketlv', 'biketlv', 'nikisgreat', {
+    host: 'localhost',
+    dialect: 'postgres',
+    operatorsAliases: false,
+    
+    pool: {
+      max: 5,
+      min: 0,
+      aquire: 30000,
+      idle: 10000
+    }
+  })
+) : (
+  new Sequelize(process.env.DATABASE_URL)
+);
 
 sequelize
   .authenticate()
