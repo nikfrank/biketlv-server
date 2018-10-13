@@ -4,8 +4,6 @@ const bodyParser = require('body-parser');
 const Sequelize = require('sequelize');
 const cors = require('cors');
 
-console.log(process.env);
-
 const sequelize = new Sequelize('biketlv', 'biketlv', 'nikisgreat', {
   host: 'localhost',
   dialect: 'postgres',
@@ -84,7 +82,9 @@ app.get('/hydrate', (req, res) => {
   
 });
 
-app.get('*', (req, res) => res.status(200).sendfile('./build/'+req.path));
+const buildDir = process.env.USER === 'nik' ? 'build' : 'dist';
+
+app.get('*', (req, res) => res.status(200).sendFile(__dirname+'/'+buildDir+'/'+req.path));
 
 
 module.exports = app;
