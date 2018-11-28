@@ -1,31 +1,27 @@
 {
-  "name": "bike_tlv",
+  "name": "bug-killer-server",
   "version": "1.0.0",
-  "description": "server for bike_tlv",
+  "description": "server for bug-killer",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "npm run pre-deploy && npm run mid-deploy && npm run finish-deploy",
-    "pre-deploy": "cp -rL build dist && git branch -D deploy && git checkout -b deploy",
-    "mid-deploy": "sed -i /dist/d ./.gitignore && git add . && git commit -am deploy",
-    "finish-deploy": "git push origin deploy --force && git checkout master"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nikfrank/biketlv-server.git"
+    "url": "git+https://gitlab.com/nikfrank/bug-killer-server.git"
   },
   "keywords": [
     "server",
-    "bike",
-    "tlv"
+    "bugs",
+    "reactJS"
   ],
-  "author": "nachum_freedman",
+  "author": "nik frank",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nikfrank/biketlv-server/issues"
+    "url": "https://gitlab.com/nikfrank/bug-killer-server/issues"
   },
-  "homepage": "https://github.com/nikfrank/biketlv-server#readme",
+  "homepage": "https://gitlab.com/nikfrank/bug-killer-server#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
